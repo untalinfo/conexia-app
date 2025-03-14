@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { UserPosts } from "./user-posts";
+import { toast } from "react-toastify";
 
 interface UserDetailPageProps {
   params: {
@@ -124,7 +125,7 @@ export default async function UserDetailPage({ params }: UserDetailPageProps) {
       </div>
     );
   } catch (error) {
-    console.log(`Error: ${error}`)
+    toast.error(`${error}`);
     notFound();
   }
 }
