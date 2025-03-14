@@ -29,7 +29,7 @@ export default function Home() {
           <CardHeader>
             <CardTitle>Usuarios</CardTitle>
             <CardDescription>
-              Encuantra todos los usuarios que tenemos en nuestro portal
+              Encuantra todos los usuarios
             </CardDescription>
           </CardHeader>
           <CardContent>
