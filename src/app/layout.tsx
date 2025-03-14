@@ -34,7 +34,7 @@ export default function RootLayout({
               <main className="flex-1 container py-6">{children}</main>
               <footer className="py-4 border-t">
                 <div className="container text-center text-sm text-muted-foreground">
-                  Technical Challenge - Next.js 14 Application
+                  Creado por @untalinfo - Todos los derechos reservados 2025
                 </div>
               </footer>
             </div>

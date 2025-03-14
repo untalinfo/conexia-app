@@ -87,20 +87,22 @@ export function CommentSection({
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-bold tracking-tight">
-        Comments ({comments.length})
+        Comentarios ({comments.length})
       </h2>
 
       <Card>
         <CardHeader>
-          <CardTitle>Add a Comment</CardTitle>
-          <CardDescription>Share your thoughts about this post</CardDescription>
+          <CardTitle>Agrega un comentario</CardTitle>
+          <CardDescription>
+            Comparte tu opinión sobre esta publicación.
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium">
-                  Name
+                  Nombre
                 </label>
                 <Input
                   id="name"
@@ -124,7 +126,7 @@ export function CommentSection({
             </div>
             <div className="space-y-2">
               <label htmlFor="comment" className="text-sm font-medium">
-                Comment
+                Comentario
               </label>
               <Textarea
                 id="comment"

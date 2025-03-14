@@ -20,7 +20,7 @@ export function UserPosts({ initialPosts }: UserPostsProps) {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {initialPosts.length === 0 ? (
         <p className="col-span-full text-center py-4">
-          This user has no posts.
+          Este usuario aun no tiene posts
         </p>
       ) : (
         initialPosts.map((post) => (
@@ -33,7 +33,7 @@ export function UserPosts({ initialPosts }: UserPostsProps) {
             </CardContent>
             <CardFooter>
               <Button asChild>
-                <Link href={`/posts/${post.id}`}>View Post</Link>
+                <Link href={`/posts/${post.id}`}>Ver Post</Link>
               </Button>
             </CardFooter>
           </Card>

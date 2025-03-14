@@ -29,15 +29,15 @@ export default async function UserDetailPage({ params }: UserDetailPageProps) {
         <div className="flex items-center justify-between">
           <h1 className="text-3xl font-bold tracking-tight">{user.name}</h1>
           <Button asChild variant="outline">
-            <Link href="/users">Back to Users</Link>
+            <Link href="/users">Regresar a usuarios</Link>
           </Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card>
             <CardHeader>
-              <CardTitle>User Information</CardTitle>
-              <CardDescription>Personal and contact details</CardDescription>
+              <CardTitle>Información del usuario</CardTitle>
+              <CardDescription>Personal y detalles de contacto</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-1 gap-2">
@@ -52,7 +52,7 @@ export default async function UserDetailPage({ params }: UserDetailPageProps) {
                   <span className="font-medium">{user.email}</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm text-muted-foreground">Phone</span>
+                  <span className="text-sm text-muted-foreground">Telefono</span>
                   <span className="font-medium">{user.phone}</span>
                 </div>
                 <div className="flex flex-col">
@@ -71,7 +71,7 @@ export default async function UserDetailPage({ params }: UserDetailPageProps) {
             <CardContent className="space-y-4">
               <div className="grid grid-cols-1 gap-2">
                 <div className="flex flex-col">
-                  <span className="text-sm text-muted-foreground">Street</span>
+                  <span className="text-sm text-muted-foreground">Dir</span>
                   <span className="font-medium">{user.address.street}</span>
                 </div>
                 <div className="flex flex-col">
@@ -79,7 +79,7 @@ export default async function UserDetailPage({ params }: UserDetailPageProps) {
                   <span className="font-medium">{user.address.suite}</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm text-muted-foreground">City</span>
+                  <span className="text-sm text-muted-foreground">Ciudad</span>
                   <span className="font-medium">{user.address.city}</span>
                 </div>
                 <div className="flex flex-col">
@@ -92,7 +92,7 @@ export default async function UserDetailPage({ params }: UserDetailPageProps) {
 
           <Card className="md:col-span-2">
             <CardHeader>
-              <CardTitle>Company</CardTitle>
+              <CardTitle>Compañia</CardTitle>
               <CardDescription>{`User's company information`}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -119,7 +119,7 @@ export default async function UserDetailPage({ params }: UserDetailPageProps) {
         </div>
 
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold tracking-tight">User Posts</h2>
+          <h2 className="text-2xl font-bold tracking-tight">Post del usuario</h2>
           <UserPosts initialPosts={posts} />
         </div>
       </div>
