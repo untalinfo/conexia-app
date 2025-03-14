@@ -8,9 +8,9 @@ export default async function UsersPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Users</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Usuarios</h1>
         <p className="text-muted-foreground">
-          Browse and filter users from JSONPlaceholder
+          Encuantra todos los usuarios que tenemos en nuestro portal
         </p>
       </div>
 

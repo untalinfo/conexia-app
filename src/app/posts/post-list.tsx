@@ -84,15 +84,16 @@ export function PostList({ initialPosts }: PostListProps) {
             <SelectValue placeholder="Sort by title" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="asc">Title (A-Z)</SelectItem>
-            <SelectItem value="desc">Title (Z-A)</SelectItem>
+            <SelectItem value="asc">Titulo de (A-Z)</SelectItem>
+            <SelectItem value="desc">Titulo de (Z-A)</SelectItem>
           </SelectContent>
         </Select>
       </div>
 
       {currentPosts.length === 0 ? (
         <p className="text-center py-4">
-          No posts found matching your search criteria.
+          No se encontraron publicaciones que coincidan con tus criterios de
+          búsqueda.
         </p>
       ) : (
         <>
@@ -107,7 +108,7 @@ export function PostList({ initialPosts }: PostListProps) {
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link href={`/posts/${post.id}`}>View Post</Link>
+                    <Link href={`/posts/${post.id}`}>Ver Post</Link>
                   </Button>
                 </CardFooter>
               </Card>
@@ -123,7 +124,7 @@ export function PostList({ initialPosts }: PostListProps) {
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
                 >
-                  Previous
+                  Atras
                 </Button>
 
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map(
@@ -143,7 +144,7 @@ export function PostList({ initialPosts }: PostListProps) {
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
                 >
-                  Next
+                  Siguiente
                 </Button>
               </div>
             </div>

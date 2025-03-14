@@ -42,7 +42,10 @@ export function UserList({ initialUsers }: UserListProps) {
       </div>
 
       {filteredUsers.length === 0 ? (
-        <p className="text-center py-4">No users found matching your search criteria.</p>
+        <p className="text-center py-4">
+          No se encontraron usuarios que coincidan con tus criterios de
+          búsqueda.
+        </p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredUsers.map((user) => (
@@ -60,7 +63,7 @@ export function UserList({ initialUsers }: UserListProps) {
               </CardContent>
               <CardFooter>
                 <Button asChild>
-                  <Link href={`/users/${user.id}`}>View Details</Link>
+                  <Link href={`/users/${user.id}`}>Ver detalles</Link>
                 </Button>
               </CardFooter>
             </Card>
@@ -68,6 +71,6 @@ export function UserList({ initialUsers }: UserListProps) {
         </div>
       )}
     </div>
-  )
+  );
 }
 

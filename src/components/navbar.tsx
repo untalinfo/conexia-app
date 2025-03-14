@@ -13,8 +13,8 @@ export function Navbar() {
               className="dark:invert"
               src="/conexia.svg"
               alt="Organizen logo"
-              width={100}
-              height={60}
+              width={60}
+              height={10}
               priority
             />
           </Link>
@@ -23,7 +23,7 @@ export function Navbar() {
               href="/users"
               className="text-sm font-medium transition-colors hover:text-primary"
             >
-              Users
+              Usuarios
             </Link>
             <Link
               href="/posts"

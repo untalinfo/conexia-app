@@ -32,15 +32,15 @@ export default async function PostDetailPage({ params }: PostDetailPageProps) {
             {post.title}
           </h1>
           <Button asChild variant="outline">
-            <Link href="/posts">Back to Posts</Link>
+            <Link href="/posts">Regresar a los Posts</Link>
           </Button>
         </div>
 
         <Card>
           <CardHeader>
-            <CardTitle>Post Details</CardTitle>
+            <CardTitle>Detalle de los post</CardTitle>
             <CardDescription>
-              By{" "}
+              de{" "}
               <Link
                 href={`/users/${user.id}`}
                 className="underline hover:text-primary"
