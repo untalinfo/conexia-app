@@ -13,16 +13,21 @@ import { CommentSection } from "./comment-section";
 import { toast } from "react-toastify";
 
 interface PostDetailPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default async function PostDetailPage({ params }: PostDetailPageProps) {
   try {
-    // Fetch post and comments on the server
-    const post = await getPost(params.id);
-    const comments = await getPostComments(params.id);
+    const resolvedParams = await params;
+
+    if (!resolvedParams?.id) {
+      notFound();
+    }
+    // Use params directly without awaiting
+    const post = await getPost(resolvedParams.id);
+    const comments = await getPostComments(resolvedParams.id);
     const user = await getUser(post.userId.toString());
 
     return (
@@ -35,7 +40,6 @@ export default async function PostDetailPage({ params }: PostDetailPageProps) {
             <Link href="/posts">Regresar a los Posts</Link>
           </Button>
         </div>
-
         <Card>
           <CardHeader>
             <CardTitle>Detalle de los post</CardTitle>
@@ -53,12 +57,11 @@ export default async function PostDetailPage({ params }: PostDetailPageProps) {
             <p className="whitespace-pre-line">{post.body}</p>
           </CardContent>
         </Card>
-
-        <CommentSection initialComments={comments} postId={params.id} />
+        <CommentSection initialComments={comments} postId={resolvedParams.id} />
       </div>
     );
   } catch (error) {
-    toast.error(`${error}`)
+    toast.error(`${error}`);
     notFound();
   }
 }

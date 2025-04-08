@@ -13,16 +13,21 @@ import { UserPosts } from "./user-posts";
 import { toast } from "react-toastify";
 
 interface UserDetailPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default async function UserDetailPage({ params }: UserDetailPageProps) {
   try {
+    // Await params before using its properties
+    const resolvedParams = await params;
+    if (!resolvedParams?.id) {
+      notFound();
+    }
     // Fetch user and their posts on the server
-    const user = await getUser(params.id);
-    const posts = await getUserPosts(params.id);
+    const user = await getUser(resolvedParams.id);
+    const posts = await getUserPosts(resolvedParams.id);
 
     return (
       <div className="space-y-6">
@@ -52,7 +57,9 @@ export default async function UserDetailPage({ params }: UserDetailPageProps) {
                   <span className="font-medium">{user.email}</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm text-muted-foreground">Telefono</span>
+                  <span className="text-sm text-muted-foreground">
+                    Telefono
+                  </span>
                   <span className="font-medium">{user.phone}</span>
                 </div>
                 <div className="flex flex-col">
@@ -119,7 +126,9 @@ export default async function UserDetailPage({ params }: UserDetailPageProps) {
         </div>
 
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold tracking-tight">Post del usuario</h2>
+          <h2 className="text-2xl font-bold tracking-tight">
+            Post del usuario
+          </h2>
           <UserPosts initialPosts={posts} />
         </div>
       </div>
